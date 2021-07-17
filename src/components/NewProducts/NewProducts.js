@@ -2,7 +2,7 @@ import React from "react";
 import classes from "../NewProducts/NewProducts.module.scss";
 import dress_model from "../../assets/image/dress_model.svg";
 import favourite from "../../assets/image/favourite.png";
-import ColorSelection from "../ColorSelection/ColorSelection";
+// import ColorSelection from "../ColorSelection/ColorSelection";
 import new_logo from "../../assets/image/new.svg";
 
 const NewProducts = () => {

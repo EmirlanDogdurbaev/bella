@@ -20,7 +20,7 @@ const Favourites = () => {
         arr.push(i);
     }
 
-    const [count, setCount] = React.useState(arr);
+    const count = React.useState(arr);
 
     return (
         <>

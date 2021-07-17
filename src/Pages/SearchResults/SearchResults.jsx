@@ -9,7 +9,7 @@ const SearchResults = () => {
         arr.push(i);
     }
 
-    const [count, setCount] = React.useState(arr);
+    const count = React.useState(arr);
     return (
         <>
             <div className={styles.mainContainer}>

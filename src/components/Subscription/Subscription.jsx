@@ -8,7 +8,7 @@ const Subscription = () => {
     const [showModal, setShowModal] = useState(false);
     const [values, setValues] = useState({});
     const [errors, setErrors] = useState({});
-    const [isSubmitting, setIsSubmitting] = useState(false);
+    const [isSubmitting, ] = useState(false);
     const handleChange = (e) => {
         setValues((values) => {
             const subscriptionObj = { ...values };
@@ -22,7 +22,7 @@ const Subscription = () => {
         if (Object.keys(errors).length === 0 && isSubmitting) {
             openModal();
         }
-    }, [errors]);
+    }, [errors , isSubmitting]);
 
     function validate(values) {
         let errors = {};

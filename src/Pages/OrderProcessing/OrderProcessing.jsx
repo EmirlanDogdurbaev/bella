@@ -9,14 +9,14 @@ import { useFormik } from "formik";
 const OrderProcessing = () => {
     const [showModal, setShowModal] = useState(false);
     const [showInfo, setShowInfo] = useState(false);
-    const [values, setValues] = useState();
-    const onChange = (e) => {
-        setValues((oldState) => {
-            const newObj = { ...oldState };
-            newObj[e.target.name] = e.target.value;
-            return newObj;
-        });
-    };
+    // const  setValues = useState();
+    // const onChange = (e) => {
+    //     setValues((oldState) => {
+    //         const newObj = { ...oldState };
+    //         newObj[e.target.name] = e.target.value;
+    //         return newObj;
+    //     });
+    // };
     // JSON.parse(JSON.stringify({}));
     const formik = useFormik({
         initialValues: {

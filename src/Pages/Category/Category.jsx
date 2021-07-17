@@ -19,7 +19,7 @@ const Category = () => {
     for (let i = 0; i < 12; i++) {
         arr.push(i);
     }
-    const [count, setCount] = React.useState(arr);
+    const count = React.useState(arr);
 
     const toggleMultilevel = () => {
         setVisibleMultilevel(!visibleMultilevel);

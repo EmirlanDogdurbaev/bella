@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from "react";
+import React, { useState} from "react";
 import classes from "./RegisterForm.module.scss";
 import { userSchema } from "../../../../../components/Validations/UserValidation";
-import app from "../../../../../firebase";
+// import app from "../../../../../firebase";
 import { useFormik, FormikProvider } from "formik";
 import Confirmation from "../../Confirmation/Confirmation";
 const RegisterForm = () => {
@@ -9,14 +9,14 @@ const RegisterForm = () => {
     let visible = () => {
         setNext(!next);
     };
-    const [values, setValues] = useState();
-    const handleChange = (e) => {
-        setValues((oldState) => {
-            const registerObj = { ...oldState };
-            registerObj[e.target.name] = e.target.value;
-            return registerObj;
-        });
-    };
+    // const [setValues] = useState();
+    // const handleChange = (e) => {
+    //     setValues((oldState) => {
+    //         const registerObj = { ...oldState };
+    //         registerObj[e.target.name] = e.target.value;
+    //         return registerObj;
+    //     });
+    // };
     const registerFormik = useFormik({
         initialValues: {
             firstName: "",
@@ -29,50 +29,52 @@ const RegisterForm = () => {
         onSubmit: (values) => {
             setTimeout(() => {
                 alert(JSON.stringify(values, null, 2));
-                SignInSubmit();
+                // SignInSubmit();
                 visible();
             }, 1000);
         },
     });
-    useEffect(() => {
-        window.recaptchaVerifier = new app.auth.RecaptchaVerifier(
-            "sign-in-button",
-            {
-                size: "invisible",
-                callback: (response) => {
-                    // reCAPTCHA solved, allow signInWithPhoneNumber.
-                    SignInSubmit();
-                    console.log("Recaptca varified");
-                },
-                defaultCountry: "KG",
-            }
-        );
-    }, []);
-    const SignInSubmit = (e) => {
-        // e.preventDefault();
-        const phoneNumber = registerFormik.values.phone;
-        console.log(registerFormik.values.phone);
-        const appVerifier = window.recaptchaVerifier;
-        app.auth()
-            .signInWithPhoneNumber(phoneNumber, appVerifier)
-            .then((confirmationResult) => {
-                // SMS sent. Prompt user to type the code from the message, then sign the
-                // user in with confirmationResult.confirm(code).
-                window.confirmationResult = confirmationResult;
-                console.log(confirmationResult);
-                console.log("OTP has been sent");
+ 
 
-                // ...
-                appVerifier.clear();
-            })
-            .catch((error) => {
-                // Error; SMS not sent
-                // ...
-                console.log(error);
-                console.log("SMS not sent");
-                appVerifier.clear();
-            });
-    };
+    // const SignInSubmit = (e) => {
+    //     // e.preventDefault();
+    //     const phoneNumber = registerFormik.values.phone;
+    //     console.log(registerFormik.values.phone);
+    //     const appVerifier = window.recaptchaVerifier;
+    //     app.auth()
+    //         .signInWithPhoneNumber(phoneNumber, appVerifier)
+    //         .then((confirmationResult) => {
+    //             // SMS sent. Prompt user to type the code from the message, then sign the
+    //             // user in with confirmationResult.confirm(code).
+    //             window.confirmationResult = confirmationResult;
+    //             console.log(confirmationResult);
+    //             console.log("OTP has been sent");
+
+    //             // ...
+    //             appVerifier.clear();
+    //         })
+    //         .catch((error) => {
+    //             // Error; SMS not sent
+    //             // ...
+    //             console.log(error);
+    //             console.log("SMS not sent");
+    //             appVerifier.clear();
+    //         });
+    // };
+    // useEffect(() => {
+    //     window.recaptchaVerifier = new app.auth.RecaptchaVerifier(
+    //         "sign-in-button",
+    //         {
+    //             size: "invisible",
+    //             callback: (response) => {
+    //                 // reCAPTCHA solved, allow signInWithPhoneNumber.
+    //                 SignInSubmit();
+    //                 console.log("Recaptca varified");
+    //             },
+    //             defaultCountry: "KG",
+    //         }
+    //     );
+    // }, [SignInSubmit]);
     return (
         <>
             {next ? (
