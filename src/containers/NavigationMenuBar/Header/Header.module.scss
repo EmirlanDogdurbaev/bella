@@ -1,0 +1,157 @@
+.header {
+  background-color: white;
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 0 5px #a7a7a7;
+  position: sticky;
+  top: 0;
+  left: 0;
+  z-index: 16;
+}
+
+.logo,
+.icon {
+  display: none;
+}
+.btn1 {
+  margin-left: -2px;
+  height: 44px;
+  text-align: center;
+  font-size: 32px;
+  vertical-align: center;
+  border: 1px solid #bdbdbd;
+  border-left: none;
+  background-color: white;
+  margin-bottom: 5px;
+}
+
+.input {
+  width: 600px;
+  border: 1px solid #bdbdbd;
+  padding: 10px 10px;
+  border-right: none;
+}
+.div1 {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  background-color: white;
+  position: absolute;
+  left: 0;
+  margin-top: 145px;
+  cursor: pointer;
+  padding: 25px;
+}
+.div2 {
+  font-size: 36px;
+  padding: 0px 10;
+  vertical-align: center;
+  margin-top: -10px;
+  margin-right: 10px;
+}
+
+@media (max-width: 966px) {
+  .header {
+    position: sticky;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: space-between;
+
+    margin: 0 auto;
+    padding: 0 15px;
+    padding-top: 0;
+    z-index: 5;
+  }
+
+  .logo {
+    display: flex;
+    align-items: center;
+
+    margin-right: 15px;
+  }
+
+  .icon {
+    display: flex;
+    align-items: center;
+
+    .img1 {
+      margin: 20px;
+      width: 25px;
+    }
+
+    .img2 {
+      width: 25px;
+      margin: 20px;
+      margin-left: 0;
+    }
+  }
+}
+
+@media (max-width: 720px) {
+  .header {
+    height: 54px;
+  }
+  .icon {
+    display: flex;
+    align-items: center;
+
+    .img1 {
+      margin: 20px;
+      width: 18px;
+    }
+
+    .img2 {
+      margin: 20px;
+      margin-left: 0;
+      width: 18px;
+    }
+  }
+}
+
+@media (max-width: 420px) {
+  .header {
+    height: 54px;
+  }
+  .icon {
+    display: flex;
+    align-items: center;
+
+    .img1 {
+      margin: 15px;
+      width: 18px;
+    }
+
+    .img2 {
+      margin: 15px;
+      margin-left: 0;
+      width: 18px;
+    }
+  }
+}
+
+@media (max-width: 300px) {
+  .header {
+    height: 54px;
+  }
+  .icon {
+    display: flex;
+    align-items: center;
+
+    .img1 {
+      margin: 10px;
+      margin-right: 5px;
+      width: 18px;
+    }
+
+    .img2 {
+      margin: 10px;
+      margin-right: 5px;
+      margin-left: 0;
+      width: 18px;
+    }
+  }
+}

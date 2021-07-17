@@ -1,0 +1,98 @@
+$brown: rgba(43, 42, 42, 1);
+
+.mainContainer {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+    background-color: $brown;
+    padding-bottom: 1.5rem;
+
+    &__inner {
+        width: 80%;
+    }
+    .container {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-top: 1.5rem;
+    }
+
+    .col_header {
+        color: rgba(171, 132, 74, 1);
+        font-weight: 700;
+        font-size: 15px;
+        margin-left: 1.6rem;
+        // padding-top: 1rem;
+    }
+
+    ul {
+        list-style: none;
+        color: rgba(124, 124, 124, 1);
+        .link {
+            text-decoration: none;
+            list-style-type: none;
+            color: rgba(124, 124, 124, 1);
+            li {
+                // padding: -5px 0 -5px 0;
+                font-weight: 400;
+                font-size: 14px;
+            }
+        }
+    }
+    .secondContainer {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-left: 2.1rem;
+        padding-top: 0.5rem;
+
+        .copyright {
+            font-size: 14px;
+            color: rgba(124, 124, 124, 1);
+        }
+    }
+}
+
+@media all and (max-width: 800px) {
+    .mainContainer {
+        background-color: $brown;
+        &__inner {
+            width: 80%;
+        }
+        .container {
+            margin: 0 auto;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            padding-top: 1rem;
+            padding-right: 2rem;
+            .col_header {
+                margin-right: 0.5rem;
+            }
+            .first__col {
+                padding-top: 1rem;
+                li {
+                    line-height: 0.1rem;
+                }
+            }
+        }
+    }
+    .secondContainer {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        .copyright {
+            font-size: 12px;
+            text-align: center;
+        }
+        .socialMediaLink {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            margin: 1em 0 1.5em 0;
+        }
+    }
+}
